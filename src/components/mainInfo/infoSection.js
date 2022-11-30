@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import "../style.scss";
+import "../../style.scss";
 
 
 export default function InfoSection({info, objectivClass,gridClass}) {

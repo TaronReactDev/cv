@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 
 export default function Footer({className}) {
 
@@ -12,7 +12,7 @@ export default function Footer({className}) {
              <a href="Taron Sargsyan CV.pdf" download> click to downlode cv</a>
          </div>
 
-         <span>see my projectes</span>
+         <span> <Link to={"/projects"}>see my projectes</Link></span>
      </div>
 
             <div className="characterReferences">

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import InfoSection from "./infoSection";
-import "../style.scss";
+import "../../style.scss";
 
 
 export default function MainInfo({className}) {

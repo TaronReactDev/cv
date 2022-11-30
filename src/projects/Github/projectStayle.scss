@@ -1,0 +1,39 @@
+div#root {
+    text-align: center;
+   
+}
+
+.MuiPagination-ul{
+    justify-content: center;
+    margin: 10px;
+}
+.makeStyles-root-2{
+    display: inline-flex;
+}
+
+
+.profiles_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+    padding: 20px;
+}
+
+.pagination {
+    margin: 20px;
+}
+
+  
+.navbar{
+width: 100%;
+min-height: 60px;
+background-color: rosybrown;
+display: flex;
+align-items: center;
+padding: 10px;
+justify-content: center;
+}
+.navbar >p{
+   
+    font-size: 25px;margin-left: 10px;
+}
