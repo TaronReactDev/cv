@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import "../../style.scss";
 
 
@@ -18,7 +18,7 @@ export default function InfoSection({info, objectivClass,gridClass}) {
 
     })
     return (
-        <section className= {`infoSectionContainer  ${objectivClass ? objectivClass:"" } ${gridClass}`}>
+        <section className= {`infoSectionContainer  ${objectivClass ? objectivClass:"" } ${gridClass}`} >
             <h4>{state.containerTitle}</h4>
             <ul>{infoArrExtract}</ul>
         </section>

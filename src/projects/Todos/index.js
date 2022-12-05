@@ -1,148 +1,143 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Task from "./Task";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import FilterBtn from "./FilterBtn";
 import InputTask from "./InputTask";
-import "./style.scss";
+import "./toDoStyle.scss";
 
 export default function Index() {
-  const [value, setValue] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const [filterChange, setFilterChange] = useState("");
-  const [important, setImportant] = useState([]);
-  const [notImportant, setNotImportant] = useState([]);
+    const [value, setValue] = useState("");
+    const [tasks, setTasks] = useState([]);
+    const [filterChange, setFilterChange] = useState("");
+    const [important, setImportant] = useState([]);
+    const [notImportant, setNotImportant] = useState([]);
 
-  useEffect(() => {
-    const importantTask = tasks.filter((elem) => {
-      return elem.task.color === "secondary";
-    });
-    setImportant([...importantTask]);
-    const notImportantTask = tasks.filter((elem) => {
-      return elem.task.color === "";
-    });
-    setNotImportant([...notImportantTask]);
-  }, [tasks]);
+    useEffect(() => {
+        const importantTask = tasks.filter((elem) => {
+            return elem.task.color === "secondary";
+        });
+        setImportant([...importantTask]);
+        const notImportantTask = tasks.filter((elem) => {
+            return elem.task.color === "";
+        });
+        setNotImportant([...notImportantTask]);
+    }, [tasks]);
 
-  const handleChange = (ev) => {
-    setValue(ev.target.value);
-  };
-  const submit = (ev) => {
-    ev.preventDefault();
-    const task = {
-      id: new Date(),
-      task: value,
-      color: "",
-      edit: false,
-      checked: false,
+    const handleChange = (ev) => {
+        setValue(ev.target.value);
     };
-    setTasks([...tasks,  {task} ]);
-    setValue("");
-  };
+    const submit = (ev) => {
+        ev.preventDefault();
+        const task = {
+            id: new Date(),
+            task: value,
+            color: "",
+            edit: false,
+            checked: false,
+        };
+        setTasks([...tasks, {task}]);
+        setValue("");
+    };
 
-  const filterValueChange = (ev) => {
-    setFilterChange(ev.target.value);
-  };
+    const filterValueChange = (ev) => {
+        setFilterChange(ev.target.value);
+    };
 
-  const onDelet = (id) => () => {
-    const deletArr = tasks.filter((el) => {
-      return el.task.id !== id;
-    });
+    const onDelet = (id) => () => {
+        const deletArr = tasks.filter((el) => {
+            return el.task.id !== id;
+        });
 
-    setTasks([...deletArr]);
-  };
+        setTasks([...deletArr]);
+    };
 
-  const onFlag = (id) => () => {
-    tasks.filter((el) => {
-      if (el.task.id === id) {
-        el.task.color === ""
-          ? (el.task.color = "secondary")
-          : (el.task.color = "");
-      }
-    });
+    const onFlag = (id) => () => {
+        tasks.filter((el) => {
+            if (el.task.id === id) {
+                el.task.color === ""
+                    ? (el.task.color = "secondary")
+                    : (el.task.color = "");
+            }
+        });
 
-    setTasks([...tasks]);
-  };
+        setTasks([...tasks]);
+    };
 
-  const editTask = (id) => () => {
-    tasks.find((el) => {
-      return el.task.id === id;
-    }).task.edit = true;
+    const editTask = (id) => () => {
+        tasks.find((el) => {
+            return el.task.id === id;
+        }).task.edit = true;
 
-    setTasks([...tasks]);
-  };
+        setTasks([...tasks]);
+    };
 
-  const changeInputEdit = (id, ev) => {
-    tasks.find((el) => {
-      return el.task.id === id;
-    }).task.task = ev.target.value;
-    setTasks([...tasks]);
-  };
+    const changeInputEdit = (id, ev) => {
+        tasks.find((el) => {
+            return el.task.id === id;
+        }).task.task = ev.target.value;
+        setTasks([...tasks]);
+    };
 
-  const saveEdit = (id) => () => {
-    tasks.find((el) => {
-      return el.task.id === id;
-    }).task.edit = false;
-    setTasks([...tasks]);
-  };
-
-  
-  const checkedClick =(id)=>()=>{
-    console.log(id, "is");
-    tasks.filter((el) => {
-if(el.task.id === id){
-  el.task.checked === false ? el.task.checked=true : el.task.checked = false;
-}
-
-
-return el;
+    const saveEdit = (id) => () => {
+        tasks.find((el) => {
+            return el.task.id === id;
+        }).task.edit = false;
+        setTasks([...tasks]);
+    };
 
 
+    const checkedClick = (id) => () => {
+        console.log(id, "is");
+        tasks.filter((el) => {
+            if (el.task.id === id) {
+                el.task.checked === false ? el.task.checked = true : el.task.checked = false;
+            }
+            return el;
+        });
 
-    });
-    
-    setTasks([...tasks]);
+        setTasks([...tasks]);
 
-  }
-  console.log(tasks);
+    }
+    console.log(tasks);
 
-  const todo = (tasks) => {
-    return tasks.map((el) => {
-      return (
-        <Task
-          id={el.task.id}
-          task={el.task.task}
-          onDelet={onDelet}
-          onFlag={onFlag}
-          color={el.task.color}
-          edit={el.task.edit}
-          editTask={editTask}
-          changeInputEdit={changeInputEdit}
-          saveEdit={saveEdit}
-          checked ={el.task.checked}
-          checkedClick={checkedClick}
-        />
-      );
-    });
-  };
+    const todo = (tasks) => {
+        return tasks.map((el) => {
+            return (
+                <Task
+                    id={el.task.id}
+                    task={el.task.task}
+                    onDelet={onDelet}
+                    onFlag={onFlag}
+                    color={el.task.color}
+                    edit={el.task.edit}
+                    editTask={editTask}
+                    changeInputEdit={changeInputEdit}
+                    saveEdit={saveEdit}
+                    checked={el.task.checked}
+                    checkedClick={checkedClick}
+                />
+            );
+        });
+    };
 
-  return (
-    <div className="todoMainDiv">
-      <div className="navbar">
-        <ListAltIcon />
-        <p>Add task</p>
-      </div>
+    return (
+        <div className="todoMainDiv">
+            <div className="navbar">
+                <ListAltIcon/>
+                <p>Add task</p>
+            </div>
 
-      <FilterBtn
-        filterValueChange={filterValueChange}
-        filterChange={filterChange}
-      />
-      <InputTask value={value} handleChange={handleChange} submit={submit} />
+            <FilterBtn
+                filterValueChange={filterValueChange}
+                filterChange={filterChange}
+            />
+            <InputTask value={value} handleChange={handleChange} submit={submit}/>
 
-      {filterChange === ""
-        ? todo(tasks)
-        : filterChange === "important"
-        ? todo(important)
-        : todo(notImportant)}
-    </div>
-  );
+            {filterChange === ""
+                ? todo(tasks)
+                : filterChange === "important"
+                    ? todo(important)
+                    : todo(notImportant)}
+        </div>
+    );
 }

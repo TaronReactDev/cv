@@ -5,11 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import trainer1 from "./img/trainer1.jpg";
 import trainer2 from "./img/trainer2.jpg";
 import trainer3 from "./img/trainer3.jpg";
-// import "aos/dist/aos.css";
 
-// import AOS from "aos";
-
-// AOS.init({ offset: 200, delay: 100, duration: 400 })
 export default function Trainers() {
   return (
     <div className="trainers" >

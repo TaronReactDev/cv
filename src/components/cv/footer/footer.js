@@ -9,7 +9,7 @@ export default function Footer({className}) {
 
      <div className="downloadCvContainer">
          <div className="downloadCv">
-             <a href="Taron Sargsyan CV.pdf" download> click to downlode cv</a>
+             <a href="./Taron Sargsyan CV.pdf" download> click to downlode cv</a>
          </div>
 
          <span> <Link to={"/projects"}>see my projectes</Link></span>

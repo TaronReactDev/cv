@@ -20,7 +20,7 @@ export default function PleyerResultes(props) {
         });
 
     let set = player1.map((e, i) => {
-        return <span>`${i + 1},`</span>;
+        return <span>{`${i + 1},`}</span>;
     });
 
     return (

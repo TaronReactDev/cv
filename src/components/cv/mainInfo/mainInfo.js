@@ -81,16 +81,19 @@ export default function MainInfo({className}) {
 
     return (
 
-        <main className={className}>
-            <InfoSection info={infoContainerObjectiv} objectivClass = "objectiv"  />
+        <section className={className}>
+            <section className="mainSection">
+                <InfoSection info={infoContainerObjectiv} objectivClass="objectiv"/>
+                <InfoSection info={infoContainerEducation}/>
+            </section>
 
-            <InfoSection info={infoContainerCareer} />
+            <section className="mainSection">
+                <InfoSection info={infoContainerCareer}/>
+                <InfoSection info={infoContainerSkills}/>
+            </section>
 
-            <InfoSection info={infoContainerEducation} />
 
-            <InfoSection info={infoContainerSkills} />
-
-        </main>
+        </section>
 
     );
 }

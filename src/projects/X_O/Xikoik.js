@@ -15,7 +15,6 @@ export default function Xikoik() {
   const [count, setCount] = useState(1);
   const [setnumber, setSetnumber] = useState([]);
   const [winner, setWinner] = useState([]);
- 
 
   useEffect(() => {
     setBord([
@@ -24,7 +23,7 @@ export default function Xikoik() {
       ["", "", ""],
     ]);
 
-    setTurn("X");
+
   }, [count,won]);
 
 
@@ -36,6 +35,7 @@ export default function Xikoik() {
     count >9 ?  setCount(1) : setCount(count + 1);
     setnumber.length >=9 ? setSetnumber([]): setSetnumber([...setnumber, <span>{count}</span>]);
     setWon(false);
+    setTurn("X");
   };
 
   const clearResult =()=>{
@@ -46,8 +46,8 @@ export default function Xikoik() {
   }
 
   const click = (i, j) => {
-    const shallowBoard = bord.map((row) => {
-      return [...row];
+    const shallowBoard = bord.map((el) => {
+      return [...el];
     });
     shallowBoard[i][j] = turn;
     setBord(shallowBoard);
@@ -64,33 +64,43 @@ export default function Xikoik() {
       checkBotLeftToRight(shallowBoard)
     );
   };
-  const checkHorizontal = (row) => {
-    for (let i = 0; i < row.length; i++) {
-      if (row[i] !== turn) return false;
+  const checkHorizontal = (el) => {
+    for (let i = 0; i < el.length; i++) {
+      if (el[i] !== turn) {
+        return false;
+      }
     }
     return true;
   };
 
   const checkVertical = (shallowBoard, j) => {
     for (let i = 0; i < shallowBoard.length; i++) {
-      if (shallowBoard[i][j] !== turn) return false;
+      if (shallowBoard[i][j] !== turn) {
+        return false;
+      }
     }
     return true;
   };
 
   const checkTopLeftToRight = (shallowBoard) => {
     for (let i = 0; i < shallowBoard.length; i++) {
-      if (shallowBoard[i][i] !== turn) return false;
+      if (shallowBoard[i][i] !== turn) {
+        return false
+      };
     }
     return true;
   };
 
   const checkBotLeftToRight = (shallowBoard) => {
     for (let i = shallowBoard.length - 1; i >= 0; i--) {
-      if (shallowBoard[i][shallowBoard.length - i - 1] !== turn) return false;
+      if (shallowBoard[i][shallowBoard.length - i - 1] !== turn) {
+        return false;
+      }
     }
     return true;
   };
+
+
 
   const bordsquer = bord.map((elem, i) => (
     <div key={i} className={"containerdiv"}>
@@ -99,6 +109,7 @@ export default function Xikoik() {
       })}
     </div>
   ));
+
 
   return (
     <div className={"mainDivXikOik"}>

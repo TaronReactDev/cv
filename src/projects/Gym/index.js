@@ -6,11 +6,6 @@ import PhoneForwardedIcon from "@mui/icons-material/PhoneForwarded";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import Trainers from "./Trainers"
 import ContactUs from "./ContactSection"
-// import "aos/dist/aos.css";
-
-// import AOS from "aos";
-
-// AOS.init({ delay: 500, duration: 2000 })
 
 export default function index() {
   return (
