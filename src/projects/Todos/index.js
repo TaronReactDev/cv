@@ -98,7 +98,6 @@ export default function Index() {
         setTasks([...tasks]);
 
     }
-    console.log(tasks);
 
     const todo = (tasks) => {
         return tasks.map((el) => {

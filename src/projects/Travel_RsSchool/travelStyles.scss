@@ -1,0 +1,904 @@
+@import "globalTravel";
+
+
+.containerBg {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.headerTravel {
+  //background-image: url("img/background.jpg");
+  //background-size: cover;
+}
+
+.headerTravel__nav {
+  height: 90px;
+  position: relative;
+}
+
+.navbarBackground {
+  height: 90px;
+  background-color: $brand;
+  opacity: 0.7;
+}
+
+.headerTravel__nav-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 120px;
+}
+
+.headerTravel__nav-ul {
+  padding: 0;
+  width: 527px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerTravel__nav_ul_li {
+  list-style: none;
+  @include font-style($redHat_font, normal, 500, 16px, 21px);
+
+}
+
+.headerTravel__nav-span-logo {
+  span {
+    margin-left: 6px;
+    @include font-style($magra_font, normal, 600, 32px, 39px);
+  }
+}
+
+.preview {
+  margin-left: 120px;
+
+  h2 {
+    width: 790px;
+    margin: 32px 0 0 0;
+    @include font-style($aleo_font, normal, 700, 80px, 96px);
+  }
+
+  h6 {
+    @include font-style($aleo_font, italic, 700, 20px, 24px);
+  }
+}
+
+.inputLabel {
+  position: relative;
+
+  input {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    width: 892px;
+    height: 95px;
+    border: none;
+    margin-bottom: 254px;
+    padding: 0 0 0 41px;
+
+
+    &::placeholder {
+      width: 560px;
+      height: 22px;
+      color: $brand;
+      margin-left: 41px;
+      @include font-style($aleo_font, italic, 400, 24px, 29px);
+    }
+  }
+}
+
+////// buttons//////////////////////////////////////////////////////////////////////////////////////////////////////////
+.buttonTravel {
+  background-color: $button_color;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.loginBtn {
+  width: 103px;
+  height: 41px;
+  @include font-style($redHat_font, normal, 500, 16px, 21px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+.startPlanningBtn {
+  width: 228px;
+  height: 59px;
+  @include font-style($redHat_font, normal, 500, 24px, 32px);
+  position: absolute;
+  top: -33px;
+  right: 0;
+  margin: 18px;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+.findMoreBtn {
+  width: 228px;
+  height: 59px;
+  margin: 40px auto 80px auto;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  @include font-style($redHat_font, normal, 500, 24px, 32px);
+
+  img {
+    margin-right: 10px;
+  }
+}
+
+.flexbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fbBtn {
+  img {
+    margin-right: 15px;
+  }
+
+  @include btn-basic(560px, 56px, #1877F2, none, 10px, white, 30px 0 20px 0, none);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.googleBtn {
+  img {
+    margin-right: 15px;
+  }
+
+  @include btn-basic(560px, 56px, white, none, 10px, $button_color, 0 0 0 0, none);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signBtn {
+  @include btn-basic(560px, 54px, $button_color, (0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16)), 10px, white, 25px 0 10px 0, none);
+}
+
+
+/////Main Content Container/////////////////////////////////////////////////////////////////////////////////////////////
+.mainContentContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
+  h4 {
+    color: $brand;
+    @include font-style($redHat_font, normal, 500, 40px, 53px)
+  }
+
+  ////3step/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  .steps {
+    h4 {
+      margin: 80px 0 40px 0;
+    }
+
+    .stepIconsContainer {
+      display: flex;
+      justify-content: space-evenly;
+
+      .iconContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .iconBackground {
+          width: 100px;
+          height: 100px;
+          border-radius: 16px;
+          background-color: $brand;
+          background-repeat: no-repeat;
+          background-position: center;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+
+        .iconDescription {
+          color: $button_color;
+          margin-bottom: 97px;
+          @include font-style($aleo_font, normal, 400, 20px, 24px)
+        }
+      }
+    }
+  }
+
+
+  ////destination///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  .destinations {
+    overflow: hidden;
+
+    h4 {
+      margin: 0 0 46px 0;
+    }
+
+    .destinationsContainer {
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+
+      .slideShowContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .sliderImg {
+
+          width: 800px;
+          height: 800px;
+          border-radius: 16px;
+          margin: 0 30px;
+          position: relative;
+
+          span {
+            position: absolute;
+            left: 15px;
+            bottom: 40px;
+            color: white;
+            @include font-style($redHat_font, normal, 500, 32px, 42px)
+          }
+        }
+      }
+    }
+
+    .destinationSlideBtnContainer {
+      display: flex;
+      width: 80px;
+      margin: 0 auto;
+      justify-content: space-between;
+      position: absolute;
+      bottom: -24px;
+
+
+      .destinationSlideBtn {
+        width: 20px;
+        height: 20px;
+        background-color: $brand;
+        border-radius: 100%;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.active {
+  opacity: 1 !important;
+}
+
+////stories//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.stories {
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+
+  h4 {
+    margin: 0 0 40px 0;
+    color: $brand;
+    @include font-style($redHat_font, normal, 500, 40px, 53px)
+  }
+
+  .storiesContainer {
+    width: 100vw;
+    position: relative;
+    background-image: url("./img/footerBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .storiesBackground {
+      background-color: white;
+      opacity: 0.7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 61px);
+      margin: 0 auto;
+    }
+
+    .travelStoryContainer {
+      width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      padding: 10px 0;
+
+      .travelStoryItemContainer {
+        display: flex;
+
+        img {
+          width: 400px;
+          height: 250px;
+          border-radius: 16px;
+          margin: 30px 40px 0 0;
+          filter: drop-shadow(0px 4px 4px #0D606F);
+        }
+
+        .storyDescriptionContainer {
+          display: flex;
+          flex-direction: column;
+          margin: 30px 40px 0 0;
+
+          h6 {
+            text-align: left;
+            color: $button_color;
+            margin: 0;
+            @include font-style($aleo_font, normal, 400, 35px, 42px)
+          }
+
+          .storyDescription {
+            color: $button_color;
+            height: 144px;
+            overflow: hidden;
+            text-align: left;
+            text-overflow: ellipsis;
+            margin: 24px 0 0 0;
+            @include font-style($aleo_font, normal, 400, 20px, 24px);
+          }
+
+          span {
+            text-align: left;
+            color: $button_color;
+            text-decoration: underline;
+            cursor: pointer;
+            @include font-style($aleo_font, normal, 700, 20px, 24px)
+          }
+        }
+      }
+    }
+
+    .zIndex {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.footer {
+  height: 61px;
+  display: flex;
+  align-items: center;
+  margin: 0 101px 0 589px;
+  justify-content: space-between;
+
+  span {
+    color: white;
+    @include font-style($redHat_font, normal, 500, 16px, 21px);
+
+    img {
+      margin-right: 20px;
+    }
+  }
+}
+
+.readMore {
+  overflow: auto !important;
+}
+
+.burgerBtn{
+  display: none;
+}
+.burgerMenuContainer{
+  display: none;
+  width: 165px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+
+  background: #F2785C;
+  box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
+  border-radius: 10px;
+  li{
+    width: 103px;
+    height: 21px;
+
+
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+  }
+}
+
+
+.burgerMenuContainer{
+  display: none;
+}
+  ///////////// login ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+.activMenu{
+  display: block;
+
+}
+
+.hideMenu{
+  display: none;
+
+}
+.closeBurgerMenu{
+  width: 30px;
+  height: 30px;
+
+}
+.containerLoginRegistr {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    @include font-style($aleo_font, normal, 700, 32px, 38px);
+    color: $button_color;
+  }
+}
+
+.containerLoginRegistrBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.2;
+}
+
+.loginContainer {
+  position: relative;
+  z-index: 1;
+  width: 650px;
+  animation: login;
+  animation-duration: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+
+  h2 {
+    margin: 25px 0 0 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    margin: 30px 0 10px 0;
+    padding: 0;
+
+    li {
+
+      span {
+        color: rgba(13, 96, 111, 0.5);
+        margin: 0 9px 0 9px;
+
+      }
+    }
+  }
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: $button_color;
+    margin-bottom: 5px;
+    @include font-style($aleo_font, normal, 400, 16px, 19px)
+  }
+
+  input {
+    width: 560px;
+    height: 54px;
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    border: none;
+
+  }
+}
+
+.forgotPass {
+  @include font-style($aleo_font, normal, 700, 15px, 18px);
+  text-decoration-line: underline;
+  color: $button_color;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.line {
+  width: 261px;
+  height: 1px;
+  background-color: $button_color;
+  opacity: 0.5;
+}
+
+.accountregistrSpan {
+  @include font-style($aleo_font, normal, 700, 15px, 18px);
+  color: rgba(13, 96, 111, 0.5);
+  margin-bottom: 23px;
+
+  .registrLink {
+    text-decoration-line: underline;
+    color: #0D606F;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  }
+}
+
+.full {
+  width: 560px;
+  margin: 26px 0 20px 0;
+}
+
+.onscroll{
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes login {
+  from {
+    transform: translateY(-100%)
+  }
+  to {
+    transform: translateY(0%)
+  }
+}
+.MobileSliderImg{
+  display: none;
+}
+
+///////media ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (max-width: 390px) {
+
+  .containerBg{
+    height: 50vh;
+  }
+  .headerTravel__nav-span-logo {
+    span {
+      display: none;
+
+    }
+  }
+
+  .navbarBackground {
+    display: none;
+  }
+  .headerTravel__nav-ul {
+display: none  }
+
+  .preview {
+    margin: 0 0 0 15px;
+
+    h2, h6 {
+      display: none;
+    }
+
+    .inputLabel {
+      input {
+        width: 360px;
+        height: 48px;
+        box-sizing: border-box;
+        margin-top: 67px;
+
+        &::placeholder {
+          width: 226.01px;
+          height: 11.12px;
+          color: $brand;
+          margin-left: 16px;
+
+          @include font-style($aleo_font, italic, 400, 14px, 17px);
+        }
+      }
+    ;
+
+      .startPlanningBtn {
+        width: 92px;
+        height: 30px;
+        @include font-style($aleo_font, italic, 500, 11px, 15px);
+        position: absolute;
+        top: -19px;
+        right: 0;
+        box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+
+      }
+    }
+  }
+
+  .footer {
+    span:first-child {
+      display: none;
+    }
+  }
+
+
+  .stories {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+
+    h4 {
+      margin: 0 0 10px 0;
+      color: $brand;
+      @include font-style($redHat_font, normal, 500, 14px, 19px)
+    }
+
+    .storiesContainer {
+      width: 100vw;
+      position: relative;
+      background-image: url("./img/footerBg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .storiesBackground {
+        background-color: white;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 61px);
+        margin: 0 auto;
+      }
+
+      .travelStoryContainer {
+        width: 360px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        padding: 10px 0;
+
+        .travelStoryItemContainer {
+          display: flex;
+
+          img {
+            width: 155px;
+            height: 130px;
+            border-radius: 16px;
+            margin: 30px 10px 0 0;
+            filter: drop-shadow(0px 4px 4px #0D606F);
+          }
+
+          ///////////////////////////////////////////////////////////////////////////////////
+          .storyDescriptionContainer {
+            display: flex;
+            flex-direction: column;
+            margin: 30px 40px 0 0;
+
+            h6 {
+              text-align: left;
+              color: $button_color;
+              margin: 0;
+              @include font-style($aleo_font, normal, 700, 11px, 13px)
+            }
+
+            .storyDescription {
+              color: $button_color;
+              height: 144px;
+              overflow: hidden;
+              text-align: left;
+              text-overflow: ellipsis;
+              width: 195px;
+              margin: 10px 0 0 0;
+              @include font-style($aleo_font, normal, 400, 9px, 11px)
+            }
+
+            span {
+              text-align: left;
+              color: $button_color;
+              text-decoration: underline;
+              cursor: pointer;
+              @include font-style($aleo_font, normal, 700, 9px, 11px)
+            }
+          }
+        }
+      }
+
+      .zIndex {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+
+  .mainContentContainer {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+
+    h4 {
+      color: $brand;
+      @include font-style($redHat_font, normal, 500, 40px, 53px)
+    }
+
+    ////3step/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    .steps {
+      h4 {
+        margin: 20px 0;
+      }
+
+      .stepIconsContainer {
+        display: flex;
+        justify-content: space-evenly;
+
+        .iconContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .iconBackground {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            background-color: $brand;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+          }
+
+          .iconDescription {
+            color: $button_color;
+            margin: 0;
+            @include font-style($aleo_font, normal, 400, 10px, 12px)
+          }
+        }
+      }
+    }
+
+
+    ////destination///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    .destinations {
+      overflow: hidden;
+
+      h4 {
+        margin: 20px 0;
+      }
+
+      .destinationsContainer {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+
+        .slideShowContainer {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 24px;
+
+          .sliderImg {
+
+            width: 360px;
+            height: 210px;
+            border-radius: 16px;
+            margin: 0 30px;
+            position: relative;
+
+            span {
+              position: absolute;
+              left: 15px;
+              top: 8px;
+              color: white;
+              @include font-style($redHat_font, normal, 500, 20px, 26px)
+            }
+          }
+        }
+      }
+
+      .destinationSlideBtnContainer {
+        display: flex;
+        width: 80px;
+        margin: 0 auto;
+        justify-content: space-between;
+        bottom: 36px;
+
+        .destinationSlideBtn {
+          width: 8px;
+          height: 8px;
+          background-color: $brand;
+          border-radius: 100%;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .headerTravel__nav-container{
+    left:0;
+    padding: 16px;
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+  }
+
+  .mainContentContainer {
+    margin: 20px 0;
+
+    h4 {
+      @include font-style($redHat_font, normal, 500, 14px, 19px)
+    }
+  }
+
+
+  .findMoreBtn {
+
+    width: 92px;
+    height: 30px;
+     margin: 10px auto 0px auto;
+
+    @include font-style($redHat_font, normal, 500, 11px, 15px);
+    img{
+      width: 10px;
+    }
+  }
+
+
+  .footer {
+    justify-content: center;
+    margin: 24px 0 0 0;
+  }
+
+
+  .ul.headerTravel__nav-ul {
+    flex-direction: column;
+  }
+  button.buttonTravel.loginBtn {
+    display: none;
+  }
+
+
+  .burgerBtn{
+    display: block;
+  }
+
+
+  .MobileSliderImg{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin:5px ;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover{
+      background-color:red;
+    }
+    .sliderLeft{
+      transform: rotate(180deg);
+  }
+  }
+}
+
